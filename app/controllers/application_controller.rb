@@ -36,7 +36,6 @@ class ApplicationController < Sinatra::Base
 
 	  if user && user.authenticate(params[:password])
 	    session[:user_id] = user.id
-      binding.pry
 	    redirect "/success"
 	  else
 	    redirect "/failure"
@@ -44,6 +43,7 @@ class ApplicationController < Sinatra::Base
 	end
 
 	get "/success" do
+    binding.pry
 		if logged_in?
 			erb :success
 		else
