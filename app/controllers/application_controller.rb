@@ -43,7 +43,6 @@ class ApplicationController < Sinatra::Base
 	end
 
 	get "/success" do
-    binding.pry
 		if logged_in?
 			erb :success
 		else
